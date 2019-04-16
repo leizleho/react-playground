@@ -16,9 +16,7 @@ ReactDOM.render(
   <ThemeProvider theme={theme}>
     <Router history={hist}>
       <Switch>
-        <div>
-          <Route path="/" component={Playground} />
-        </div>
+        <Route path="/" component={Playground} />
       </Switch>
     </Router>
   </ThemeProvider>,
