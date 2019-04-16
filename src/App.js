@@ -1,21 +1,18 @@
-import React, { useState } from 'react';
-import './App.css';
+import React from 'react';
+import { Router, Route, Switch } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import Playground from './playground1.jsx';
 
 function App() {
-  const [searchString, setSearchString] = useState('');
-
-  const updateSearchString = event => {
-    console.log('searchString', searchString);
-    setSearchString(event.target.value);
-  };
+  const hist = createBrowserHistory();
   return (
-    <div className="App">
-      <h1>HELLO!</h1>
-      <div className="form">
-        <input value={searchString} onChange={updateSearchString} />
-        <button>Search</button>
-      </div>
-    </div>
+    <Switch>
+      <Router history={hist}>
+        <div>
+          <Route path="/" component={Playground} />
+        </div>
+      </Router>
+    </Switch>
   );
 }
 
