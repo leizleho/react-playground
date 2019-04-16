@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header.jsx';
+import GridContainer from '../../components/Grid/GridContainer.jsx';
+import GridItem from '../../components/Grid/GridItem.jsx';
 import playgroundStyle from './playgroundStyle.jsx';
 
 function Playground() {
@@ -21,8 +23,18 @@ function Playground() {
           color: 'info'
         }}
       />
-      <h1>Hello H1</h1>
-      <h2>Hello H2</h2>
+      <div className={classes.container}>
+        <GridContainer>
+          <GridItem>
+            <div className={classes.brand}>
+              <h1>
+                Playground <span className={classes.proBadge}>PRO</span>
+              </h1>
+              <h3 className={classes.title}>All Components</h3>
+            </div>
+          </GridItem>
+        </GridContainer>
+      </div>
     </div>
   );
 }
