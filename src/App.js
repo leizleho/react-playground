@@ -1,18 +1,18 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
-import Playground from './playground1.jsx';
+import Playground from './pages/Playground/Playground.jsx';
 
 function App() {
   const hist = createBrowserHistory();
   return (
-    <Switch>
-      <Router history={hist}>
+    <Router history={hist}>
+      <Switch>
         <div>
           <Route path="/" component={Playground} />
         </div>
-      </Router>
-    </Switch>
+      </Switch>
+    </Router>
   );
 }
 
