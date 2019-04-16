@@ -1,15 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { Router, Route, Switch } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 
+import './scss/material-kit-pro-react.css';
+import Playground from './pages/Playground/Playground.jsx';
+
 const theme = createMuiTheme({ typography: { useNextVariants: true } });
+const hist = createBrowserHistory();
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <App />
+    <Router history={hist}>
+      <Switch>
+        <div>
+          <Route path="/" component={Playground} />
+        </div>
+      </Switch>
+    </Router>
   </ThemeProvider>,
   document.getElementById('root')
 );
